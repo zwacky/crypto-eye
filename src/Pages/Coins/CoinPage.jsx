@@ -22,9 +22,10 @@ const CoinPage = () => {
     fetchCoin()
   }, [id])
 
-  // console.log(coin);
-
-  if (!coin) { }
+  if (!coin) {
+    // make sure coin is not empty so it doesn't fetch `undefined` with https://api.coingecko.com/...
+    return <>loading</>
+  }
   return (
     <Box sx={{
       display: "flex",
